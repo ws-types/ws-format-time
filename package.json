@@ -1,0 +1,23 @@
+{
+  "name": "ws-format-time",
+  "version": "1.0.0",
+  "description": "A format date time helper for es5 and typescript - Easy for showing time in formnat string.",
+  "main": "dist/index.js",
+  "dependencies": {
+    "ws-regex": "^1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ws-types/ws-format-time.git"
+  },
+  "author": "wallace sun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ws-types/ws-format-time/issues"
+  },
+  "homepage": "https://github.com/ws-types/ws-format-time#readme"
+}
