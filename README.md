@@ -1,4 +1,6 @@
 # ws-format-time : Nice date helper
+[![Build Status](https://travis-ci.org/ws-types/ws-format-time.svg?branch=master)](https://travis-ci.org/ws-types/ws-format-time)
+
 Easy for showing time in formnat string in ES5/Typescript.
 
 This is a library to make logger service more powerful. 
