@@ -1,5 +1,5 @@
 export declare type TimeZone = number | string;
-export declare type TimeInput = [TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone] | Date;
+export declare type TimeInput = [TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone] | Date | number;
 export declare class FormatTime {
     private time;
     readonly Years: number;

@@ -6,10 +6,15 @@ var FormatTime = /** @class */ (function () {
         if (zone === void 0) { zone = 0; }
         this.time = new Date(1970, 1, 1, 0, 0, 0, 0);
         if (param instanceof Array) {
+            // Fuck month !
+            param[1] = (+param[1]) - 1;
             this.time = new (Date.bind.apply(Date, [void 0].concat(param)))();
         }
         else if (!param && param instanceof (Date)) {
             this.time = param;
+        }
+        else if (typeof (param) === 'number') {
+            this.time = new Date(param);
         }
         if (Math.abs(zone) > 12) {
             zone = 0;
@@ -22,7 +27,7 @@ var FormatTime = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(FormatTime.prototype, "Months", {
-        get: function () { return this.time.getMonth(); },
+        get: function () { return this.time.getMonth() + 1; },
         enumerable: true,
         configurable: true
     });

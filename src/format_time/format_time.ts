@@ -1,14 +1,14 @@
 import { Regex } from 'ws-regex';
 
 export type TimeZone = number | string;
-export type TimeInput = [TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone] | Date;
+export type TimeInput = [TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone, TimeZone] | Date | number;
 
 export class FormatTime {
 
     private time: Date = new Date(1970, 1, 1, 0, 0, 0, 0);
 
     public get Years() { return this.time.getFullYear(); }
-    public get Months() { return this.time.getMonth(); }
+    public get Months() { return this.time.getMonth() + 1; }
     public get Days() { return this.time.getDate(); }
     public get Hours() { return this.time.getHours(); }
     public get Minutes() { return this.time.getMinutes(); }
@@ -28,9 +28,13 @@ export class FormatTime {
 
     constructor(param: TimeInput, zone: number = 0) {
         if (param instanceof Array) {
+            // Fuck month !
+            param[1] = (+param[1]) - 1;
             this.time = new Date(...param);
         } else if (!param && param instanceof (Date)) {
             this.time = param;
+        } else if (typeof (param) === 'number') {
+            this.time = new Date(param);
         }
         if (Math.abs(zone) > 12) {
             zone = 0;
@@ -39,3 +43,4 @@ export class FormatTime {
     }
 
 }
+
