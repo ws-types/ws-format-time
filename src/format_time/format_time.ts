@@ -29,7 +29,7 @@ export class FormatTime {
     constructor(param: TimeInput, zone: number = 0) {
         if (param instanceof Array) {
             this.time = new Date(...param);
-        } else {
+        } else if (!param && param instanceof (Date)) {
             this.time = param;
         }
         if (Math.abs(zone) > 12) {

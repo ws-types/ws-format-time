@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ws_regex_1 = require("ws-regex");
-var FormatTime = (function () {
+var FormatTime = /** @class */ (function () {
     function FormatTime(param, zone) {
         if (zone === void 0) { zone = 0; }
         this.time = new Date(1970, 1, 1, 0, 0, 0, 0);
         if (param instanceof Array) {
             this.time = new (Date.bind.apply(Date, [void 0].concat(param)))();
         }
-        else {
+        else if (!param && param instanceof (Date)) {
             this.time = param;
         }
         if (Math.abs(zone) > 12) {
