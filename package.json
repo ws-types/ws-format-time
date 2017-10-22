@@ -1,6 +1,6 @@
 {
   "name": "ws-format-time",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A format date time helper for es5 and typescript - Easy for showing time in formnat string.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

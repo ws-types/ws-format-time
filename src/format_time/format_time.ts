@@ -19,6 +19,8 @@ export class FormatTime {
     public get FormatTime() { return `${this.Hours}:${this.Minutes >= 10 ? this.Minutes : '0' + this.Minutes}:${this.Seconds >= 10 ? this.Seconds : '0' + this.Seconds}`; }
     public get FormatDateTime() { return `${this.FormatDate} ${this.FormatTime}`; }
 
+    public get UnixTime(): number { return this.time.getTime(); }
+
     public static Create = (param: TimeInput, zone: number = 0) => new FormatTime(param, zone);
 
     public static Parse = (pattern: string | RegExp, target: string, zone: number = 0, keys: string[] = ['Yr', 'Mth', 'Dy', 'h', 'm', 's', 'ms']) => {

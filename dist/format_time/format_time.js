@@ -71,6 +71,11 @@ var FormatTime = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(FormatTime.prototype, "UnixTime", {
+        get: function () { return this.time.getTime(); },
+        enumerable: true,
+        configurable: true
+    });
     FormatTime.Create = function (param, zone) {
         if (zone === void 0) { zone = 0; }
         return new FormatTime(param, zone);
